@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmplifyHub — Vibe Coder & Digital Growth Architect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .title-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .hero-bg {
+      background: #0a0a0a;
+    }
+    .grain {
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+    }
+    .grid-bg {
+      background-image: linear-gradient(to_right, #80808012 1px, transparent 1px),
+                        linear-gradient(to_bottom, #80808012 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .custom-cursor {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      transition: transform 0.1s ease;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      backdrop-filter: blur(1px);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .glass {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(16px);
+    }
+    .project-hover:hover {
+      border-color: rgb(34 211 238 / 0.5);
+    }
+    .accent {
+      color: #22d3ee;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-zinc-100 min-h-screen overflow-x-hidden cursor-none">
+  <!-- Background Effects -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="grain absolute inset-0"></div>
+    <div class="grid-bg absolute inset-0"></div>
+    <div class="absolute inset-0 bg-radial-gradient(circle at center, transparent 40%, #000 90%) opacity-80"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" class="custom-cursor hidden md:block"></div>
+  <div id="cursor-ring" class="cursor-ring hidden md:block"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full px-6 md:px-12 py-6 flex justify-between items-center z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
+    <div class="flex items-center gap-2">
+      <div class="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+      <span class="font-bold text-xl tracking-tighter title-font">AMPLIFY<span class="accent">HUB</span></span>
+    </div>
+    <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-zinc-400 font-medium">
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+      <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
+      <a href="#work" class="hover:text-white transition-colors">Work</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+    </div>
+    <a href="#contact" class="px-6 py-3 border border-zinc-700 hover:border-cyan-400 text-sm font-medium rounded-full transition-colors">Let's Collaborate</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex flex-col justify-center px-6 md:px-24 pt-20 relative z-10">
+    <div class="absolute top-1/4 right-0 w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    
+    <div class="max-w-5xl">
+      <span class="inline-block py-1 px-4 rounded-full bg-zinc-900/80 border border-zinc-700 text-xs text-cyan-400 font-mono mb-6">Vibe Coder • Digital Growth Architect</span>
+      
+      <h1 class="text-6xl md:text-8xl font-bold tracking-tighter title-font leading-[1.05] mb-8">
+        Turning <span class="text-zinc-600">vibes</span> into<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">measurable growth.</span>
+      </h1>
+      
+      <p class="text-zinc-400 text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
+        I blend high-ROAS digital marketing with creative AI-assisted ("Vibe") coding to build brands that scale and experiences that connect.
+      </p>
+      
+      <div class="flex flex-col md:flex-row gap-4 mt-12">
+        <a href="#work" class="px-10 py-5 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition text-center">View My Work</a>
+        <a href="#about" class="px-10 py-5 border border-zinc-600 hover:border-white text-zinc-300 font-medium rounded-full transition text-center">More About Me</a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-3xl text-zinc-600"></i>
+    </div>
+  </section>
+
+  <!-- Skills Marquee -->
+  <section class="py-8 border-y border-zinc-800/50 bg-black/50 backdrop-blur-sm overflow-hidden">
+    <div class="flex whitespace-nowrap text-xl md:text-3xl font-mono uppercase text-zinc-500 font-medium tracking-[4px]">
+      <div class="flex animate-marquee gap-12">
+        <span>Vibe Coding • AI Tools • Next.js • Tailwind • Meta Ads • YouTube Growth • Brand Ambassador • ROAS Optimization • Creative Strategy • Automation • Digital Marketing • Community Building • </span>
+        <span>Vibe Coding • AI Tools • Next.js • Tailwind • Meta Ads • YouTube Growth • Brand Ambassador • ROAS Optimization • Creative Strategy • Automation • Digital Marketing • Community Building • </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 md:py-32 px-6 md:px-24 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 md:mb-16">
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tighter title-font">Beyond Campaigns &amp; Code</h2>
+        <p class="text-zinc-400 mt-4 max-w-lg text-lg">I don't just run ads or write code — I architect growth systems that feel alive and deliver real results.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[180px]">
+        <!-- Stack Card -->
+        <div class="md:col-span-2 md:row-span-2 glass rounded-3xl border border-zinc-800 p-8 group hover:border-cyan-500/50 transition-all">
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6">
+                <i class="fas fa-code text-3xl"></i>
+              </div>
+              <h3 class="text-3xl font-bold mb-2">The Vibe Stack</h3>
+              <p class="text-zinc-400">Tools I use to blend creativity with performance.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 mt-12">
+              <div>
+                <div class="text-5xl font-bold text-white">Marketing</div>
+                <div class="text-xs text-zinc-500 tracking-widest">Meta • YouTube • SEO</div>
+              </div>
+              <div>
+                <div class="text-5xl font-bold text-cyan-400">Vibe Code</div>
+                <div class="text-xs text-zinc-500 tracking-widest">AI • React • Automation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="glass rounded-3xl border border-zinc-800 p-8 group hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+          <i class="fas fa-map-marker-alt text-4xl text-emerald-400"></i>
+          <div>
+            <p class="uppercase text-xs tracking-widest text-zinc-500">Based in</p>
+            <p class="text-2xl font-semibold">Nigeria</p>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="glass rounded-3xl border border-zinc-800 p-8 group hover:border-cyan-500/50 transition-all flex flex-col justify-between">
+          <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse ml-auto"></div>
+          <div>
+            <p class="uppercase text-xs tracking-widest text-zinc-500">Currently</p>
+            <p class="text-2xl font-semibold">Open to Projects</p>
+            <p class="text-cyan-400 text-sm">Marketing • Vibe Coding • Collaborations</p>
+          </div>
+        </div>
+
+        <!-- Toolbox -->
+        <div class="md:col-span-2 glass rounded-3xl border border-zinc-800 p-8 group hover:border-orange-500/50 transition-all">
+          <div class="flex justify-between items-start h-full">
+            <div>
+              <h3 class="text-2xl font-bold">My Daily Tools</h3>
+              <p class="text-zinc-500 text-sm mt-1">Marketing + Code</p>
+            </div>
+            <div class="flex gap-6 text-3xl text-zinc-400">
+              <i class="fab fa-meta hover:text-white transition"></i>
+              <i class="fab fa-youtube hover:text-white transition"></i>
+              <i class="fas fa-robot hover:text-white transition"></i>
+              <i class="fas fa-code hover:text-white transition"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Projects -->
+  <section id="work" class="py-20 md:py-32 px-6 md:px-24 relative z-10 bg-black/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div>
+          <h2 class="text-4xl md:text-6xl font-bold tracking-tighter title-font">Selected Work</h2>
+          <p class="text-zinc-400 mt-3">Campaigns, tools, and experiences that delivered results.</p>
+        </div>
+        <div class="text-xs font-mono text-zinc-500 mt-6 md:mt-0">2023 — 2026</div>
+      </div>
+
+      <div class="space-y-12">
+        <!-- Project 1: Marketing Campaign -->
+        <div class="group cursor-pointer">
+          <div class="glass rounded-3xl border border-zinc-800 project-hover overflow-hidden">
+            <div class="grid md:grid-cols-12 gap-8 p-8 md:p-10">
+              <div class="md:col-span-5 flex flex-col justify-center order-2 md:order-1">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-cyan-400 font-mono text-xs tracking-widest">01</span>
+                  <div class="h-px flex-1 bg-zinc-700"></div>
+                  <span class="text-zinc-500 text-xs uppercase">Digital Marketing</span>
+                </div>
+                <h3 class="text-3xl font-bold group-hover:text-cyan-300 transition-colors">High-ROAS D2C Campaign</h3>
+                <p class="text-zinc-400 mt-4 leading-relaxed">Meta + YouTube ads delivering 3.2x ROAS with creative systems and audience scaling for skincare brand.</p>
+                <div class="mt-8 text-cyan-400 flex items-center gap-2 text-sm font-medium">
+                  View Case Study <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </div>
+              <div class="md:col-span-7 h-64 md:h-96 rounded-2xl overflow-hidden bg-zinc-950 relative order-1 md:order-2">
+                <div class="absolute inset-0 bg-gradient-to-br from-rose-500/30 to-transparent"></div>
+                <div class="flex items-center justify-center h-full text-8xl">🛍️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Vibe Coding -->
+        <div class="group cursor-pointer">
+          <div class="glass rounded-3xl border border-zinc-800 project-hover overflow-hidden">
+            <div class="grid md:grid-cols-12 gap-8 p-8 md:p-10">
+              <div class="md:col-span-5 flex flex-col justify-center order-2 md:order-1">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-cyan-400 font-mono text-xs tracking-widest">02</span>
+                  <div class="h-px flex-1 bg-zinc-700"></div>
+                  <span class="text-zinc-500 text-xs uppercase">Vibe Coding</span>
+                </div>
+                <h3 class="text-3xl font-bold group-hover:text-cyan-300 transition-colors">Interactive Portfolio Builder</h3>
+                <p class="text-zinc-400 mt-4 leading-relaxed">AI-assisted dynamic CV &amp; portfolio tool with smooth animations and real-time customization.</p>
+                <div class="mt-8 text-cyan-400 flex items-center gap-2 text-sm font-medium">
+                  View Case Study <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+              </div>
+              <div class="md:col-span-7 h-64 md:h-96 rounded-2xl overflow-hidden bg-zinc-950 relative order-1 md:order-2">
+                <div class="flex items-center justify-center h-full text-8xl">✨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more projects from your PDF as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="py-24 px-6 md:px-24 border-t border-zinc-800/50 bg-[#050505]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+      <div>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter title-font leading-tight">
+          Let's build something<br>that actually <span class="accent">vibes</span>.
+        </h2>
+        <a href="mailto:hello@amplifyhub.ng" class="mt-12 inline-flex items-center gap-4 text-xl text-cyan-400 hover:text-cyan-300">
+          <div class="p-4 bg-cyan-500/10 rounded-2xl">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          hello@amplifyhub.ng
+        </a>
+      </div>
+
+      <div class="flex gap-6">
+        <a href="https://x.com/TheAmplifyHub" target="_blank" class="w-16 h-16 rounded-2xl border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition">
+          <i class="fab fa-x-twitter text-2xl"></i>
+        </a>
+        <a href="#" class="w-16 h-16 rounded-2xl border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-24 text-xs text-zinc-600 font-mono flex flex-col md:flex-row justify-between gap-4">
+      <span>© 2026 AmplifyHub. All rights amplified.</span>
+      <span>Built with vibe &amp; code in Nigeria</span>
+    </div>
+  </footer>
+
+  <script>
+    // Tailwind script already loaded
+
+    // Custom Cursor
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+
+    document.addEventListener('mousemove', (e) => {
+      dot.style.left = `${e.clientX}px`;
+      dot.style.top = `${e.clientY}px`;
+      ring.style.left = `${e.clientX - 16}px`;
+      ring.style.top = `${e.clientY - 16}px`;
+    });
+
+    // Make cursor visible on desktop
+    if (window.innerWidth > 768) {
+      dot.classList.remove('hidden');
+      ring.classList.remove('hidden');
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Simple marquee animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .animate-marquee {
+        animation: marquee 25s linear infinite;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
